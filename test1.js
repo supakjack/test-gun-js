@@ -18,10 +18,10 @@ const main = async () => {
   const region = await getRegion()
   const country = await getCountry()
   const result = {}
-  await country.map((c) => {
+  for (const c of country) {
     const r = region.find((r) => r.id == c.regionId)
     result[c.abbr] = r.name
-  })
+  }
   console.log(result)
 }
 
