@@ -20,7 +20,8 @@ const main = async () => {
   const result = {}
   for (const c of country) {
     const r = region.find((r) => r.id == c.regionId)
-    result[c.abbr] = r.name
+    const key = c.abbr.toUpperCase()
+    result[key] = r.name
   }
   console.log(result)
 }
